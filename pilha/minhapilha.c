@@ -24,7 +24,7 @@ struct no *adicionarNovoNo(struct no *node, int valor){
                 node = ptr;
 	}
 
-	printf(" valor %d - endereco %u \n",node->valor, node->proximo);
+	printf(" valor %d - endereco %p \n",node->valor, node->proximo);
 	return node;
 }
 
@@ -34,11 +34,11 @@ void imprimir(struct no *node){
 
 	if (node != NULL){
                 ptr = node;
-	  	printf(" valor: %d - meu ender: %u - prox: %u \n", ptr->valor, ptr, ptr->proximo);
+	  	printf(" valor: %d - meu ender: %p - prox: %p \n", ptr->valor, ptr, ptr->proximo);
 		
 		while (ptr->proximo){
                    ptr = ptr->proximo;
-	  	   printf(" valor: %d - meu ender: %u - prox: %u \n",ptr->valor, ptr, ptr->proximo);
+	  	   printf(" valor: %d - meu ender: %p - prox: %p \n",ptr->valor, ptr, ptr->proximo);
 		}
 	}
 } 
@@ -110,7 +110,7 @@ struct no *deletarNoPorValor(struct no *node, int pesquisa) {
         //vai ate a posicao anterior à encontrada(q neste caso eh a penultima) -2 pq comecei a contar do zero
         while (contador < (totalLista -2)){
              node = node->proximo;
-	     printf(" valor: %d - meu ender: %u \n", node->valor,  node);
+	     printf(" valor: %d - meu ender: %p \n", node->valor,  node);
              contador++;
             //no final do loop chegara ao penultimo
         }
@@ -154,12 +154,12 @@ void criarMenu(){
 
 int main(void)
 {
-	char command;
-	char ch, rank_ch;
+	// char command;
+	char ch=0, rank_ch=0;
 	struct no *node;
-	int num, encontrado;
+	int num, encontrado, rs_scn;
 
-	system("clear");
+	rs_scn = system("clear");
 	criarMenu();
 
 	rank_ch = getchar();
@@ -170,12 +170,12 @@ int main(void)
 	  	 case '0':  exit(EXIT_SUCCESS);
 	  	 case '1':           
 			printf("\n Entre com o valor :  ");
-        		scanf("%d", &num);
+			rs_scn = scanf("%d", &num);
 			node = adicionarNovoNo(node, num);
                    break;
 	  	 case '2':           
 			printf("Entre com o valor para pesquisa:  ");
-        		scanf("%d", &num);
+			rs_scn = scanf("%d", &num);
 
 			encontrado = pesquisarPorPosicao(node, num);
 	  	   	if (encontrado > 0){
@@ -192,7 +192,7 @@ int main(void)
 			break;
 	  	 case '5':           
 			printf("\n Entre com o valor :  ");
-        		scanf("%d", &num);
+			rs_scn = scanf("%d", &num);
 			
 			node = deletarNoPorValor(node, num); 
 			//deletarPorValor(node, num); 
@@ -212,6 +212,7 @@ int main(void)
 	
     }
     
+    printf("\n %d", rs_scn);
     free(node);
 
     return 0;
