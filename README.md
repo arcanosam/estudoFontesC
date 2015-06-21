@@ -1,42 +1,59 @@
-Desenvolvido no Debian. Rodado via linha de comando com GCC e GDB 
+TODO
+* fix:
+  * Stack is not piling, the last element added must point to NULL and not the first one
+  * Input of menu must be sanitized to prevent errors as choice an option that don't exists
+* improvements:
+  * add before menu re-print the system function calling 'clear' command
+    * System messages printed by choiced options must be parameterized passing to makeMenu function or will be lost
 
 _________________________________________________________________________
 
-1) Estrutura de dados: Pilha
-* Fonte: minhapilha.c
-  * Inserção
-  * Pesquisa por valor
-  * Exclusão
-  * Retorna tamanho da lista.
-  * Usa malloc e ponteiro 
-
-  * para compilar:
-    * gcc -g minhapilha.c -o pilha
-
-  * para rodar:
-    * se quiser usar gdb -> (sudo apt-get install gdb)
-    * gdb ./pilha  ou somente ./pilha 
+2015-06-21 - some refactoring
+* modularization
+  * add main file to root project
+  * rename source origin to stack.c
+* translate source to english and follow the stack's conventions here: https://en.wikipedia.org/wiki/Stack_%28abstract_data_type%29
 
 _________________________________________________________________________
 
-2) Fork efetuado dia 16/06/2015
-* Projeto importado do meu github para projeto no Eclipse CDT
-
+2015-06-18 - formating source
+* Following:  http://www.gnu.org/prep/standards/standards.html#Formatting
+  
 _________________________________________________________________________
 
-3) dia 17/06/2015 - Encontrado e corrigido 11 warnings
+2015-06-17 - Found and fixed 11 warnings
 
-* Inicialização de variáveis char com valor zero
-* Especificador de formato %u das funções do printf modificados para %p
-* Variável 'command' não utilizada - linha comentada
+* Char variables initialized with integer zero
+* Printf specify formmatter %u changed to %p
+* 'command' variabel not utilized - line commented
 * Variável rs_scn criada para recepção dos retornos das funções: system e scanf
   * Impressão do resultado desta variável ao final da execução do programa por mera conveniência afim de evitar warning
 
 _________________________________________________________________________
 
-4) dia 18/06/2015
-* Formatação de código
-  * Seguindo orientações do link: http://www.gnu.org/prep/standards/standards.html#Formatting
-  * TODO
-  	* incluir no momento da re-criação do menu a função 'system' chamando o comando 'clear' para limpar a telar
-  	* Mensagens informativas das opções escolhidas serem repassadas por parâmetro para serem impressas pela função criarMenu 
+
+2015-06-16 - Fork my brother's github 
+* Using xubuntu 15.04 x86_64 on virtualbox
+* Make a project by import on Eclipse CDT Luna
+
+_________________________________________________________________________
+My brother originally written:
+
+Developed in Debian. Running in command line with GCC and GDB 
+
+1) Data Structure: Stack
+* Source: stack.c
+  * Features:
+    * Insertion
+  	* Search by value
+  	* Exclusion
+  	* Count stack size
+  * Malloc and pointers are used. 
+
+  * to compile:
+    * gcc -g stack.c -o stack
+
+  * to run:
+    * to use gdb make sure to have installed: sudo apt-get install gdb
+    * gdb ./stack  or just ./stack 
+
