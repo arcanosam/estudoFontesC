@@ -2,7 +2,7 @@ TODO
 * fix:
   * [ ] Input of menu must be sanitized to prevent errors as choice an option that don't exists
 * improvements:
-  * [ ]add before menu re-print the system function calling 'clear' command
+  * [ ] add before menu re-print the system function calling 'clear' command
     * [ ] System messages printed by choiced options must be parameterized passing to makeMenu function or will be lost
 
 _________________________________________________________________________
