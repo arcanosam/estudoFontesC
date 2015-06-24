@@ -8,7 +8,7 @@ TODO
 _________________________________________________________________________
 
 2015-06-23 - understanding stack architecture
-* [x] Stack is not piling, the last element added must point to NULL and not the first one
+* [x] *Stack is not piling, the last element added must point to NULL and not the first one*
   * After reading and meditate about Basic Architecture of a stack (in previous link), I understand that
 there is no implementation error. I just not fully understand the implementation
 
