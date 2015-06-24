@@ -1,10 +1,16 @@
 TODO
 * fix:
-  * Stack is not piling, the last element added must point to NULL and not the first one
-  * Input of menu must be sanitized to prevent errors as choice an option that don't exists
+  * [ ] Input of menu must be sanitized to prevent errors as choice an option that don't exists
 * improvements:
-  * add before menu re-print the system function calling 'clear' command
-    * System messages printed by choiced options must be parameterized passing to makeMenu function or will be lost
+  * [ ]add before menu re-print the system function calling 'clear' command
+    * [ ] System messages printed by choiced options must be parameterized passing to makeMenu function or will be lost
+
+_________________________________________________________________________
+
+2015-06-23 - understanding stack architecture
+* [x] Stack is not piling, the last element added must point to NULL and not the first one
+  * After reading and meditate about Basic Architecture of a stack (in previous link), I understand that
+there is no implementation error. I just not fully understand the implementation
 
 _________________________________________________________________________
 
